@@ -1,119 +1,59 @@
-# **Numerical Analysis of the Photoelectric Effect**
+# Underdamped Oscillator Analysis
 
-This project demonstrates the application of numerical methods to analyze the **photoelectric effect**, a fundamental phenomenon in quantum mechanics. The analysis involves deriving **Planck's constant ($h$)** and the **work function ($W$)** of a material using simulated experimental data.
+This Python project explores the dynamics of an underdamped oscillator using numerical simulation and data visualization. The system is modeled using a second-order differential equation, and the simulation results are analyzed to understand the behavior of the oscillator.
 
----
+## Project Structure
 
-## **Overview**
+- **`code.ipynb`**: Jupyter Notebook containing the simulation code, analysis, and visualizations for the underdamped oscillator.
+  
+## Features
 
-The photoelectric effect describes the emission of electrons from a metal surface when exposed to light of a certain frequency. The relationship between the kinetic energy ($K$) of ejected electrons and the frequency ($f$) of incident light is given by:
+- **Numerical Simulation**: Solves the differential equation governing the underdamped oscillator using numerical methods.
+- **Visualization**: Plots the time response of the oscillator to visualize underdamped behavior.
+- **Parameter Exploration**: Allows users to explore the effects of different damping ratios and natural frequencies on the oscillator's response.
 
-$$
-K = h f - W
-$$
+## Requirements
 
-Where:
-- $K$: Kinetic energy of ejected electrons.
-- $h$: Planck's constant.
-- $f$: Frequency of incident light.
-- $W$: Work function of the metal (minimum energy required to eject an electron).
+- Python 3.x
+- Jupyter Notebook
+- Required Python packages (install using `pip`):
+  - numpy
+  - matplotlib
+  - scipy
 
-This repository demonstrates how four numerical methods are applied to this phenomenon:
-
-1. **Root Finding**: Calculate the threshold frequency ($f_{\text{threshold}}$).
-2. **Curve Fitting**: Determine $h$ and $W$ from experimental data.
-3. **Differentiation and Integration**: Analyze the rate of change and cumulative effects.
-4. **Optimization**: Minimize errors in the theoretical model to refine parameters.
-
----
-
-## **Files in the Repository**
-
-- `photoelectric_analysis.py`: Main Python script implementing the analysis.
-- `data_generation.py`: Script for generating simulated experimental data with noise.
-- `plots/`: Folder containing generated plots for visualization.
-- `README.md`: Documentation for the repository.
-
----
-
-## **Steps in the Experiment**
-
-### 1. **Data Generation**
-Simulated experimental data is generated using:
-- A linear relationship between frequency ($f$) and kinetic energy ($K$).
-- Added random noise to emulate real experimental conditions.
-
-### 2. **Numerical Methods Applied**
-#### a) **Root Finding**
-- Calculate the threshold frequency ($f_{\text{threshold}} = W / h$).
-
-#### b) **Curve Fitting**
-- Use least squares optimization to fit the experimental data to the theoretical model.
-
-#### c) **Differentiation and Integration**
-- Numerical differentiation: Validate the relationship $\frac{dK}{df} = h$.
-- Numerical integration: Calculate the total energy or number of electrons emitted.
-
-#### d) **Optimization**
-- Use optimization algorithms to minimize the error between the model and experimental data.
-
-### 3. **Visualization**
-- Plot the experimental data, theoretical model, and fitted curve for comparison.
-
----
-
-## **Dependencies**
-
-The project requires the following Python libraries:
-- `numpy`
-- `matplotlib`
-- `scipy`
-
-Install them using:
-```bash
-pip install numpy matplotlib scipy
-```
-
----
-
-## **How to Run the Code**
+## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/photoelectric-analysis.git
-   cd photoelectric-analysis
+   git clone https://github.com/yourusername/underdamped-oscillator.git
+   cd underdamped-oscillator
    ```
 
-2. Run the main script:
+2. Install the required packages:
    ```bash
-   python photoelectric_analysis.py
+   pip install -r requirements.txt
    ```
 
-3. View the generated plots and results in the console.
+3. Open the Jupyter Notebook:
+   ```bash
+   jupyter notebook code.ipynb
+   ```
 
----
+## Usage
 
-## **Key Results**
+1. Launch the Jupyter Notebook and execute the cells sequentially to run the simulation and visualize the results.
+2. Modify the parameters in the Notebook to observe how changes in damping ratio and natural frequency affect the system's behavior.
 
-The project demonstrates how numerical methods can be applied to:
-- Derive Planck's constant ($h$) and the work function ($W$).
-- Visualize the relationship between frequency and kinetic energy.
-- Minimize errors and improve model accuracy using optimization techniques.
+## Project Workflow
 
----
+- **Initialization**: Define initial conditions and parameters for the oscillator.
+- **Simulation**: Use `scipy.integrate.solve_ivp` to solve the differential equation.
+- **Analysis**: Generate plots to analyze the displacement, velocity, and phase plot of the oscillator.
 
-## **Contributions**
+## Contributing
 
-Feel free to contribute by submitting issues or pull requests. Suggestions for improving the numerical methods or experimental setup are welcome!
+Contributions are welcome! Please fork the repository and submit a pull request with your changes.
 
----
+## Acknowledgments
 
-## **Contact**
-
-For questions or collaboration, reach out via email at **husain.hadi.p@gmail.com**.
-
---- 
-
-## **Acknowledge**
-
-Thanks to [ChatGPT](https://chatgpt.com/) for the assistance. 
+This project was inspired by classical mechanics and control systems theory. Special thanks to the open-source community and ChatGPT for providing tools that make such simulations possible.
